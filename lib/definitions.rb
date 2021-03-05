@@ -30,12 +30,12 @@ class Definitions
   end
 
   def save
-    @@definitions[self.id] = Definitions.new(self.spelling, self.id)
+    @@definitions[self.id] = Definitions.new(self.text, self.word_id)
   end
 
-  def update(spelling)
-    self.spelling = spelling
-    @@definitions[self.id] = Definitions.new(self.spelling, self.id)
+  def update(text)
+    self.text = text
+    @@definitions[self.id] = Definitions.new(self.text, self.word_id, self.id)
   end
 
   def delete
