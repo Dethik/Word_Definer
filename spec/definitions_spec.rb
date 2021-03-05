@@ -48,4 +48,17 @@ describe '#Definition' do
     end
   end
 
+  describe('.find') do
+    it("finds a definition by id") do
+      definition = Definitions.new("definition", @word.id)
+      definition.save()
+      definition2 = Definitions.new("definition", @word.id)
+      definition2.save()
+      expect(Definitions.find(definition.id)).to(eq(definition))
+    end
+  end
+
+
+
+
 end
