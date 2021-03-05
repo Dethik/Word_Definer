@@ -40,5 +40,12 @@ describe '#Definition' do
     end
   end
 
+  describe('#save') do
+    it("saves a definition") do
+      definition = Definitions.new("definition", @word.id)
+      definition.save()
+      expect(Definitions.all).to(eq([definition]))
+    end
+  end
 
 end
