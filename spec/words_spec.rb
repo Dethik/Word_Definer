@@ -30,4 +30,14 @@ describe '#Word' do
       expect(word1 == word2).to(eq(false))
     end
   end
+  describe '.clear' do
+    it "clears all words from cache" do
+      word1 = Words.new("word", nil)
+      word2 = Words.new("word", nil)
+      word1.save()
+      word2.save()
+      Words.clear()
+      expect(Words.all).to eq([])
+    end
+  end
 end
