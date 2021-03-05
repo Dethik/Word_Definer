@@ -1,6 +1,6 @@
-require 'rspec'
-require 'words'
-require 'pry'
+require ('rspec')
+require ('words')
+require ('pry')
 
 describe '#Word' do
   before(:each) do
