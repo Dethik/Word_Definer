@@ -24,8 +24,30 @@ get('/words/:id') do
   erb(:word)
 end
 
-get('words/:id/edit') do
+get('/words/:id/edit') do
   @word = Words.find(params[:id].to_i)
   erb(:edit_word)
+end
+
+post('/words') do
+  spelling = params[:spelling]
+  word = Words.new(spelling)
+  word.save
+  @words = Words.all
+  erb(:words)
+end
+
+patch('/words/:id') do
+  @word = Words.find(params[:id].to_i)
+  @word.update(params[:spelling])
+  @words = Words.all
+  erb(:words)
+end
+
+delete('/words/:id') do
+  @word = Words.find(params[:id].to_i)
+  @word.delete
+  @words = Words.all
+  erb(:words)
 end
 
