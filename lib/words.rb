@@ -16,6 +16,11 @@ class Words
     @@words.values
   end
 
+  def self.clear
+    @@words = {}
+    @@total_rows = 0
+  end
+
   def save
     @@words[self.id] = Word.new(self.spelling, self.id)
   end
@@ -27,5 +32,9 @@ class Words
 
   def delete
     @@words.delete(self.id)
+  end
+
+  def ==(word_compare)
+    self.spelling == word_compare.spelling
   end
 end

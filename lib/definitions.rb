@@ -18,12 +18,12 @@ class Definitions
   end
 
   def save
-    @@definitions[self.id] = Word.new(self.spelling, self.id)
+    @@definitions[self.id] = Definitions.new(self.spelling, self.id)
   end
 
   def update(spelling)
     self.spelling = spelling
-    @@definitions[self.id] = Word.new(self.spelling, self.id)
+    @@definitions[self.id] = Definitions.new(self.spelling, self.id)
   end
 
   def delete
