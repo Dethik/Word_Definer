@@ -67,5 +67,35 @@ describe '#Definition' do
     end
   end
 
+  describe('#delete') do
+    it("deletes a definition by id") do
+      definition = Definitions.new("definition", @word.id)
+      definition.save()
+      definition2 = Definitions.new("definition", @word.id)
+      definition2.save()
+      definition.delete()
+      expect(Definitions.all).to(eq([definition2]))
+    end
+  end
+
+  describe('#definitions') do
+    it("returns word's definitions") do
+      word = Words.new("this")
+      word.save()
+      definition = Definitions.new("definition", word.id)
+      definition.save()
+      definition2 = Definitions.new("Cousin Mary", word.id)
+      definition2.save()
+      expect(word.definitions).to(eq([definition, definition2]))
+    end
+  end
+
+  describe('#word') do
+    it("finds the word a definition belongs to") do
+      definition = Definitions.new("definition", @word.id)
+      definition.save()
+      expect(definition.word()).to(eq(@word))
+    end
+  end
 
 end

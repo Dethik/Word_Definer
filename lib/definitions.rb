@@ -1,4 +1,5 @@
 require ('pry')
+require ('words')
 
 class Definitions
   attr_reader :id
@@ -40,5 +41,19 @@ class Definitions
 
   def delete
     @@definitions.delete(self.id)
+  end
+
+  def word
+    Words.find(self.word_id)
+  end
+
+  def self.find_by_word(word_id)
+    definitions = []
+    @@definitions.values.each do |define|
+      if define.word_id == word_id
+        definitions.push(define)
+      end
+    end
+    definitions
   end
 end
