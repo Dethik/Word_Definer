@@ -1,0 +1,15 @@
+<h1>Dictionary of Words</h1>
+
+<h3>Added words</h3>
+
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |word| %>
+        <li><a href="/words/<%= word.id %>"><%= word.spelling %></a></li>
+      <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no Words to display.</p>
+<% end %>
+
+<a href="/words/new">Add a new Word!</a>

@@ -51,3 +51,7 @@ delete('/words/:id') do
   erb(:words)
 end
 
+get('/words/:id/definitions/:definition_id') do
+  @definition = Definitions.find(params[:definition_id].to_i())
+  erb(:definitions)
+end

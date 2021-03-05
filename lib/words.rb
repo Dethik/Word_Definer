@@ -1,5 +1,4 @@
 require('pry')
-require('definitions')
 
 class Words
   attr_reader :id
