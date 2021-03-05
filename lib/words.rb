@@ -30,6 +30,10 @@ class Words
     @@words.values.select { |word| word.spelling == query }
   end
 
+  def self.sort
+    @@words.values.sort
+  end
+
   def save
     @@words[self.id] = Words.new(self.spelling, self.id)
   end
