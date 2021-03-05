@@ -29,7 +29,16 @@ describe '#Definition' do
     end
   end
 
-
+  describe('.clear') do
+    it("clears all definitions") do
+      definition = Definitions.new("Giant Steps", @word.id)
+      definition.save()
+      definition2 = Definitions.new("definition", @word.id)
+      definition2.save()
+      Definitions.clear()
+      expect(Definitions.all).to(eq([]))
+    end
+  end
 
 
 end
