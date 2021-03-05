@@ -8,7 +8,7 @@ class Definitions
   @@definitions = {}
   @@total = 0
 
-  def initialize(text, word_id, id=nil)
+  def initialize(text, word_id, id = nil)
     @text = text
     @word_id = word_id
     @id = id || @@total += 1

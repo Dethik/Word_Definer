@@ -8,7 +8,7 @@ class Words
   @@words = {}
   @@total = 0
 
-  def initialize(spelling, id=nil)
+  def initialize(spelling, id = nil)
     @spelling = spelling
     @id = id || @@total += 1
   end
@@ -24,6 +24,10 @@ class Words
   def self.clear
     @@words = {}
     @@total_rows = 0
+  end
+
+  def self.search(query)
+    @@words.values.select { |word| word.spelling == query }
   end
 
   def save
