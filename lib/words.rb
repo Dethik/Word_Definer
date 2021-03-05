@@ -7,7 +7,7 @@ class Words
   @@words = {}
   @@total = 0
 
-  def initialize(spelling, id)
+  def initialize(spelling, id=nil)
     @spelling = spelling
     @id = id || @@total += 1
   end

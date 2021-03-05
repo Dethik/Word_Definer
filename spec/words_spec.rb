@@ -13,27 +13,27 @@ describe '#Word' do
   end
   describe '#save' do
     it('saves the word') do
-      words = Words.new("words", nil)
+      words = Words.new("words")
       words.save()
       expect(Words.all).to(eq([words]))
     end
   end
   describe '#==' do
     it "returns true if they are the same word" do
-      word1 = Words.new("word", nil)
-      word2 = Words.new("word", nil)
+      word1 = Words.new("word")
+      word2 = Words.new("word")
       expect(word1 == word2).to(eq(true))
     end
     it "returns false if they are not the same word" do
-      word1 = Words.new("word", nil)
-      word2 = Words.new("pug", nil)
+      word1 = Words.new("word")
+      word2 = Words.new("pug")
       expect(word1 == word2).to(eq(false))
     end
   end
   describe '.clear' do
     it "clears all words from cache" do
-      word1 = Words.new("word", nil)
-      word2 = Words.new("word", nil)
+      word1 = Words.new("word")
+      word2 = Words.new("word")
       word1.save()
       word2.save()
       Words.clear()
