@@ -16,6 +16,10 @@ class Words
     @@words.values
   end
 
+  def self.find(id)
+    @@words[id]
+  end
+
   def self.clear
     @@words = {}
     @@total_rows = 0
