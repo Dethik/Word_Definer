@@ -9,7 +9,7 @@ class Words
 
   def initialize(spelling, id)
     @spelling = spelling
-    @id = id || @@total_rows += 1
+    @id = id || @@total += 1
   end
 
   def self.all
