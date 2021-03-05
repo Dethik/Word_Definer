@@ -26,6 +26,16 @@ class Definitions
     @@definitions = {}
   end
 
+  def self.find_by_word(word_id)
+    definitions = []
+    @@definitions.values.each do |define|
+      if define.word_id == word_id
+        definitions.push(define)
+      end
+    end
+    definitions
+  end
+
   def ==(def_compare)
     (self.text() == def_compare.text()) && (self.word_id() == def_compare.word_id())
   end
@@ -45,15 +55,5 @@ class Definitions
 
   def word
     Words.find(self.word_id)
-  end
-
-  def self.find_by_word(word_id)
-    definitions = []
-    @@definitions.values.each do |define|
-      if define.word_id == word_id
-        definitions.push(define)
-      end
-    end
-    definitions
   end
 end
