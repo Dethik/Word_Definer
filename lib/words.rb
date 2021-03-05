@@ -22,12 +22,12 @@ class Words
   end
 
   def save
-    @@words[self.id] = Word.new(self.spelling, self.id)
+    @@words[self.id] = Words.new(self.spelling, self.id)
   end
 
   def update(spelling)
     self.spelling = spelling
-    @@words[self.id] = Word.new(self.spelling, self.id)
+    @@words[self.id] = Words.new(self.spelling, self.id)
   end
 
   def delete
