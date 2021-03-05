@@ -55,3 +55,24 @@ get('/words/:id/definitions/:definition_id') do
   @definition = Definitions.find(params[:definition_id].to_i())
   erb(:definitions)
 end
+
+post ('/words/:id/definitions') do
+  @word = Words.find(params[:id].to_i())
+  definition = Definitions.new(params[:definition], @word.id)
+  definition.save()
+  erb(:word)
+end
+
+patch ('/words/:id/definitions/:definition_id') do
+  @word = Words.find(params[:id].to_i())
+  definition = Definitions.find(params[:definition_id].to_i())
+  definition.update(params[:spelling], @word.id, params[:definitionwriter])
+  erb(:word)
+end
+
+delete ('/words/:id/definitions/:definition_id') do
+  definition = Definitions.find(params[:definition_id].to_i())
+  definition.delete
+  @word = Words.find(params[:id].to_i())
+  erb(:word)
+end
