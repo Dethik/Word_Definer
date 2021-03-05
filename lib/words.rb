@@ -26,7 +26,7 @@ class Words
   end
 
   def self.search(query)
-    @@words.values.select { |word| word.spelling == query }
+    @@words.values.select { |words| words.spelling == query }
   end
 
   def self.sort

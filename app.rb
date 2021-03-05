@@ -51,22 +51,37 @@ delete('/words/:id') do
   erb(:words)
 end
 
+get('/search_word') do
+  @words = Words.all
+  erb(:words)
+end
+
+post('/query_word') do
+  # "Hello world"
+  @words = Words.search(params[:spelling])
+  binding.pry
+  erb(:search_word)
+end
+
 post('/words/:id/definitions') do
   @word = Words.find(params[:id].to_i())
   definition = Definitions.new(params[:definition], @word.id)
-  definition.save()
+  definition.save
+  binding.pry
   erb(:word)
 end
 
 get('/words/:id/definitions/:definition_id') do
+  @word = Words.find(params[:id].to_i())
   @definition = Definitions.find(params[:definition_id].to_i())
+  binding.pry
   erb(:definitions)
 end
 
 patch('/words/:id/definitions/:definition_id') do
   @word = Words.find(params[:id].to_i())
   definition = Definitions.find(params[:definition_id].to_i())
-  definition.update(params[:spelling], @word.id, params[:definitionwriter])
+  definition.update(params[:text], @word.id)
   erb(:word)
 end
 

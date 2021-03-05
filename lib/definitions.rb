@@ -40,11 +40,12 @@ class Definitions
   end
 
   def save
-    @@definitions[self.id] = Definitions.new(self.text, self.word_id)
+    @@definitions[self.id] = Definitions.new(self.text, self.word_id, self.id)
   end
 
-  def update(text)
+  def update(text, word_id)
     self.text = text
+    self.word_id = word_id
     @@definitions[self.id] = Definitions.new(self.text, self.word_id, self.id)
   end
 

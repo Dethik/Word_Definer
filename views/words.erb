@@ -13,3 +13,12 @@
 <% end %>
 
 <a href="/words/new">Add a new Word!</a>
+<br>
+<form action="/query_word" method="post">
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input id="search" name="spelling" class="form-control" type="text">
+  </div>
+
+  <button type="submit" class="btn"> Go!</button>
+</form>
