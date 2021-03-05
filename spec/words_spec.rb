@@ -18,4 +18,16 @@ describe '#Word' do
       expect(Words.all).to(eq([words]))
     end
   end
+  describe '#==' do
+    it "returns true if they are the same word" do
+      word1 = Words.new("word", nil)
+      word2 = Words.new("word", nil)
+      expect(word1 == word2).to(eq(true))
+    end
+    it "returns false if they are not the same word" do
+      word1 = Words.new("word", nil)
+      word2 = Words.new("pug", nil)
+      expect(word1 == word2).to(eq(false))
+    end
+  end
 end
