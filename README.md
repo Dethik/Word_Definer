@@ -51,6 +51,8 @@ bundle
 ## Addition comments:
 * Created on 3/5/21
 
+If any bugs or issues arrise please feel free to email me from the Contact Info below!
+
 * * *
 
 ## License:

@@ -4,7 +4,6 @@
   <ul>
     <% @words.each do |word| %>
         <li><a href="/words/<%= word.id %>"><%= word.spelling %></a></li>
-
       <% end %>
   </ul>
 <% else %>

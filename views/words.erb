@@ -1,7 +1,7 @@
 <h1>Dictionary of Words</h1>
-
+<br>
 <h3>Added words</h3>
-
+<br>
 <% if @words.any? %>
   <ul>
     <% @words.each do |word| %>
@@ -19,6 +19,5 @@
     <label for="search">Search</label>
     <input id="search" name="spelling" class="form-control" type="text">
   </div>
-
   <button type="submit" class="btn"> Go!</button>
 </form>

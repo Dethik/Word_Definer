@@ -57,9 +57,7 @@ get('/search_word') do
 end
 
 post('/query_word') do
-  # "Hello world"
   @words = Words.search(params[:spelling])
-  binding.pry
   erb(:search_word)
 end
 
@@ -67,14 +65,12 @@ post('/words/:id/definitions') do
   @word = Words.find(params[:id].to_i())
   definition = Definitions.new(params[:definition], @word.id)
   definition.save
-  binding.pry
   erb(:word)
 end
 
 get('/words/:id/definitions/:definition_id') do
   @word = Words.find(params[:id].to_i())
   @definition = Definitions.find(params[:definition_id].to_i())
-  binding.pry
   erb(:definitions)
 end
 
