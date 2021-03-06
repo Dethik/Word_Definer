@@ -8,7 +8,9 @@
 This is an app that allows the user to input and edit Words, and add/edit the Definitions of the words.
 
 [Repo Link](https://github.com/Dethik/Word_Definer)
+<br>
 [Heroku App Link](https://dictionary-words.herokuapp.com/)
+<br>
 [Alt Heroku Link](https://git.heroku.com/dictionary-words.git)
 
 * * *
