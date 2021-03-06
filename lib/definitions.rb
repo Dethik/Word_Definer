@@ -16,15 +16,12 @@ class Definitions
   def self.all
     @@definitions.values
   end
-
   def self.find(id)
     @@definitions[id]
   end
-
   def self.clear
     @@definitions = {}
   end
-
   def self.find_by_word(word_id)
     definitions = []
     @@definitions.values.each do |define|
@@ -34,25 +31,20 @@ class Definitions
     end
     definitions
   end
-
   def ==(def_compare)
     (self.text() == def_compare.text()) && (self.word_id() == def_compare.word_id())
   end
-
   def save
     @@definitions[self.id] = Definitions.new(self.text, self.word_id, self.id)
   end
-
   def update(text, word_id)
     self.text = text
     self.word_id = word_id
     @@definitions[self.id] = Definitions.new(self.text, self.word_id, self.id)
   end
-
   def delete
     @@definitions.delete(self.id)
   end
-
   def word
     Words.find(self.word_id)
   end
