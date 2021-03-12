@@ -62,7 +62,7 @@ describe '#Definition' do
     it("updates an definition by id") do
       definition = Definitions.new("definition", @word.id)
       definition.save()
-      definition.update("new_definitions")
+      definition.update("new_definitions", @word.id)
       expect(definition.text).to(eq("new_definitions"))
     end
   end
